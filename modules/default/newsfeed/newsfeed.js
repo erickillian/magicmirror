@@ -13,8 +13,8 @@ Module.register("newsfeed",{
 	defaults: {
 		feeds: [
 			{
-				title: "New York Times",
-				url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+				title: "O-H-I-O News",
+				url: "http://www.osu.edu/rss.php?feed=O-H-I-O&limit=10",
 				encoding: "UTF-8" //ISO-8859-1
 			}
 		],
