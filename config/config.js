@@ -40,43 +40,51 @@ var config = {
 		},
 		{
 			module: "clock",
-			position: "top_left"
+			position: "top_left",
+			config: {
+				timeFormat: 12,
+			}
 		},
 		{
 			module: "compliments",
-			position: "lower_third"
+			position: "upper_third"
 		},
 		//{
-		//	module: "currentweather",
-		//	position: "top_right",
+		//	module: "weather",
+		//	position: "top_left",
 		//	config: {
-		//		location: "New York",
-		//		locationID: "",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-		//		appid: "YOUR_OPENWEATHER_API_KEY"
-		//	}
+		//		// See 'Configuration options' for more information.
+		//		type: 'current',
+		//		weatherProvider: 'weathergov',
+		//		units: 'imperial',
+		//		apiBase: 'https://api.weather.gov/points/',
+		//		weatherEndpoint: '/forecast',
+		//		lat: '39.96199',
+		//		lon: '-83.00275'
+		//	},
 		//},
 		{
 			module: "ourlogo",
 			position: "top_right"
 		},
-		//{
-		//	module: "weatherforecast",
-		//	position: "top_right",
-		//	header: "Weather Forecast",
-		//	config: {
-		//		location: "New York",
-		//		locationID: "5128581",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-		//		appid: "YOUR_OPENWEATHER_API_KEY"
-		//	}
-		//},
+		{
+			module: "weatherforecast",
+			position: "bottom_bar",
+			header: "Weather Forecast: Columbus, Ohio",
+			config: {
+				location: "Columbus",
+				locationID: "4256038",  //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
+				appid: "a890ade6a9d1fe744c9fbf26e8d26f33"
+			}
+		},
 		{
 			module: "newsfeed",
 			position: "top_right",
 			config: {
 				feeds: [
 					{
-						title: "O-H-I-O",
-						url: "http://www.osu.edu/rss.php?feed=O-H-I-O&limit=10"
+						title: "Google News",
+						url: "https://news.google.com/news/rss"
 					}
 				],
 				showSourceTitle: true,
@@ -86,14 +94,77 @@ var config = {
 			}
 		},
 		{
+			module: "newsfeed",
+			position: "top_right",
+			config: {
+				feeds: [
+					{
+						title: "Fox Sports",
+						url: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nhl"
+					}
+				],
+				showSourceTitle: true,
+				showPublishDate: true,
+				broadcastNewsFeeds: true,
+				broadcastNewsUpdates: true
+			}
+		},
+		{
+  			module: "MMM-MyScoreboard",
+  			position: "bottom_right",
+  			classes: "default everyone",
+  			header: "My Scoreboard",
+  			config: {
+    				showLeagueSeparators: true,
+    				colored: true,
+					viewStyle: "smallLogos",
+    				sports: [
+      				{
+        			league: "NHL",
+					teams: ["CLB"],
+        			groups: ["Metropolitain"],
+      				},
+      				{
+        			league: "MLB",
+        			teams: ["CLE", "CIN"],
+      				},
+      				{
+        			league: "NFL",
+        			teams: ["CLE"],
+      				},
+      				{
+        			league: "NCAAF",
+        			teams: ["OSU"],
+					groups: ["Big Ten"],
+      				},
+      				{
+        			league: "NCAAM_MM",
+        			label: "March Madness",
+					groups: ["Big Ten"],
+      				},
+   				]
+  			}
+		},
+		{
     			module: 'MMM-voice',
     			position: 'bottom_bar',
-    			config: {
+    		config: {
         			microphone: 1,
         			keyword: 'OKAY BRUTUS',
 				timeout: 15
     			}			
-		}
+		},
+		//{
+		//	module: "MMM-GoogleAssistant",
+		//	position: "bottom_bar",
+		//	config: {
+		//		maxWidth: "100%",
+		//		header: "",
+		//		publishKey: 'pub-c-62983ff3-9092-4f48-b39e-4b910762c205',
+		//		subscribeKey: 'sub-c-6688cbb0-5b70-11ea-b226-5aef0d0da10f',
+		//		updateDelay: 500
+		//	}
+		//},
 	]
 
 };
