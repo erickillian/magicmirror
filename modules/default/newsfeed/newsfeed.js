@@ -184,7 +184,7 @@ Module.register("newsfeed",{
 			if (this.config.showFullArticle) {
 				var fullArticle = document.createElement("iframe");
 				fullArticle.className = "";
-				fullArticle.style.width = "100vw";
+				fullArticle.style.width = "50vw";
 				// very large height value to allow scrolling
 				fullArticle.height = "3000";
 				fullArticle.style.height = "3000";
